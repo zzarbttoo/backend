@@ -8,4 +8,4 @@ else
     ENV_FILE="app/config/local.env"
 fi
 
-exec python3 -m uvicorn app.main:app --host 0.0.0.0 --port 0 --env-file "$ENV_FILE"
+exec python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8080 --env-file "$ENV_FILE"
