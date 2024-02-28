@@ -22,4 +22,4 @@ ENV PYTHONPATH="/backend:${PYTHONPATH}"
 EXPOSE 5672
 
 ENTRYPOINT ["python3", "-m", "uvicorn", "app.main:app"]
-CMD ["--host", "0.0.0.0", "--port", "5672", "--env-file", "/app/config/local.env"]
+CMD ["--host", "0.0.0.0", "--port", "5672", "--env-file", "/backend/app/config/local.env"]
