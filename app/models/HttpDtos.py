@@ -31,8 +31,8 @@ class Home:
     funding_current_price:int #펀딩가(백만원)
     num_of_people:int #참여 인원
     width:str #면적
-    before_image_url:str #before 이미지 사진, db저장
-    after_image_url:str #after 이미지 사진, db저장(null 로 오면 생성 가능)
+    before_image_url:bytes #before 이미지 사진, db저장
+    after_image_url:bytes #after 이미지 사진, db저장(null 로 오면 생성 가능)
     is_funding_done:bool #funding 완료 여부
     funding_done_date:datetime #funding 완료 일자 
     funding_open_date:datetime #funding 시작 일자 
@@ -40,7 +40,7 @@ class Home:
 
 
 #Response
-from typing import List
+from typing import List, Optional
 
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
@@ -73,15 +73,22 @@ class CreateImageResponse:
     home_seq:int 
     image_url:str
 
+from typing import List
+
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class ConvertImageRequest():
     home_seq:int
     before_image_url:str
-    corp_list:List #요구사항들 리스트로 받음, nullable
+    corp_list: Optional[List[str]] = None  #요구사항들 리스트로 받음, nullable
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            home_seq = data.get('homeSeq'),
+            before_image_url = data.get('beforeImageUrl'), 
+            corp_list = data.get('corpList')
+        )
 
-
-@dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class ConvertImageAndInsertHomeResponse():
     home:Home
