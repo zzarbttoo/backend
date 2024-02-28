@@ -16,10 +16,9 @@ RUN pip install --no-cache-dir --upgrade -r /backend/requirements.txt
 
 COPY . /backend
 
-EXPOSE 0
+
 EXPOSE 5672
 
-COPY entrypoint.sh /backend/entrypoint.sh
-RUN chmod +x /backend/entrypoint.sh
+ENTRYPOINT ["python3", "-m", "uvicorn", "app.main:app"]
+CMD ["--host", "0.0.0.0", "--port", "5672" , "--env-file", "app/config/local.env"]
 
-ENTRYPOINT ["/backend/entrypoint.sh"]
