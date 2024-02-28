@@ -2,6 +2,14 @@ from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from dataclasses_json import LetterCase
 
+#Page
+@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass
+class Page:
+    total: int  # 전체 페이지 수
+    current: int # 현재 페이지 
+
+#Home
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class Home:
@@ -20,14 +28,11 @@ class Home:
     scheduled_move_in_date: str #입주 예정일 
     is_completion_status: bool #준공? -> true : 준공 false: 미준공
     land_type: str #택지 종류
+    before_image:str #before 이미지 사진, db저장 
+    after_image:str #after 이미지 사진, db저장(null 로 오면 없는 것..)
 
 
-@dataclass_json(letter_case=LetterCase.CAMEL)
-@dataclass
-class Page:
-    total: int  # 전체 페이지 수
-    current: int # 현재 페이지 
-
+#Response
 from typing import List
 
 @dataclass_json(letter_case=LetterCase.CAMEL)
@@ -42,4 +47,15 @@ class WholeHomeResponseList:
     homeList: List[Home]
 
 
+#Request
+@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass
+class createImageRequest:
+    home_seq:int
+   
+
+class createImageResponse:
+    home_seq:int 
+    image_seq:int
+    image_name:str
 
