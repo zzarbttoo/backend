@@ -20,22 +20,16 @@ def convert_image_with_already_exist(response:Response, req:ConvertImageRequest)
     home = Home(
         home_seq=1,
         address="도두일동 2619-1(도두 네오하임)",
-        construction_company="네오종합건설㈜",
-        executing_agency="㈜네오투자개발",
-        type_sale=True,
-        is_private=True,
-        scale="84.01",
-        sale_price=340,
-        number_of_sale_units=64,
-        number_of_unsold_units=24,
-        subscription_date_for_sale="2016.10.24",
-        contract_closing_date="2016.10.24",
-        scheduled_move_in_date="2016.11.07",
-        is_completion_status=True,
-        land_type="민간",
+        sale_price="340",
+        funding_current_price="40",
+        num_of_people=30,
+        width="84.01",
         before_image_url="https://mk.kakaocdn.net/dna/karlo/image/2024-02-28/15/5a7cef75-763b-470f-b777-ae266853a458.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1709103142&signature=%2FVen9pBIBmtvTZMw2vNj637B8uQ%3D",
-        after_image_url=None,
-        is_funding_done=False
+        after_image_url="https://mk.kakaocdn.net/dna/karlo/image/2024-02-28/15/5a7cef75-763b-470f-b777-ae266853a458.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1709103142&signature=%2FVen9pBIBmtvTZMw2vNj637B8uQ%3D" ,
+        is_funding_done=False,
+        funding_done_date=datetime.strptime("2023.10.24", "%Y.%m.%d"),
+        funding_open_date=datetime.strptime("2024.10.24", "%Y.%m.%d"),
+        funding_last_date=363
     )
 
     response.status_code = status.HTTP_200_OK 

@@ -52,8 +52,10 @@ async def read_items(response:Response, sort_request:SortRequest):
 
     if (sort_request.show_standard == "PROGRESS"):
         filtered_home_list = list(filter(lambda home: home.is_funding_done == True, homeList))
+        print(filtered_home_list)
     elif(sort_request.show_standard == "FIN"):
         filtered_home_list = list(filter(lambda home: home.is_funding_done == False, homeList))
+        print(filtered_home_list)
     else:
         filtered_home_list = homeList
 
