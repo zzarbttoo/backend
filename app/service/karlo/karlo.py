@@ -1122,6 +1122,13 @@ class Karlo:
         seed=None, 
         nsfw_checker=False
     ):
+        proxy_url = "http://krmp-proxy.9rum.cc:3128"
+        proxies = {
+        "http": proxy_url,
+        "https": proxy_url,
+        }
+
+
         """
         이미지 생성하기 API
 
@@ -1157,7 +1164,7 @@ class Karlo:
             "nsfw_checker": nsfw_checker
         }
         _json = {k: v for k, v in _json.items() if v is not None}
-        return requests.post(_url, json=_json, headers=self.headers).json()
+        return requests.post(_url, json=_json, headers=self.headers, proxies=proxies).json()
     
     def upscale_image(
         self, 

@@ -12,8 +12,6 @@ import base64
 proxy_url = "http://krmp-proxy.9rum.cc:3128"
 
 
-
-
 # 이미지 변환하기
 def inpainting(image, mask):
 
