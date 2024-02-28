@@ -19,7 +19,7 @@ COPY . /backend
 # Set PYTHONPATH
 ENV PYTHONPATH="/backend:${PYTHONPATH}"
 
-EXPOSE 5672
+EXPOSE 8080
 
 ENTRYPOINT ["python3", "-m", "uvicorn", "app.main:app"]
-CMD ["--host", "0.0.0.0", "--port", "5672", "--env-file", "/backend/app/config/local.env"]
+CMD ["--host", "0.0.0.0", "--port", "8080", "--env-file", "/backend/app/config/local.env"]
