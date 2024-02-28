@@ -1161,7 +1161,8 @@ class Karlo:
             "guidance_scale": guidance_scale,
             "scheduler": scheduler,
             "seed": seed,
-            "nsfw_checker": nsfw_checker
+            "nsfw_checker": nsfw_checker, 
+            'return_type' : 'base64_string'
         }
         _json = {k: v for k, v in _json.items() if v is not None}
         return requests.post(_url, json=_json, headers=self.headers, proxies=proxies).json()
