@@ -6,8 +6,10 @@ from dataclasses_json import LetterCase
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class Page:
-    total: int  # 전체 페이지 수
+    total_page: int  # 전체 페이지 수
     current: int # 현재 페이지 
+    total_count: int #전체 갯수 
+    chunk: int #한 페이지당 갯수 
 
 #Home
 @dataclass_json(letter_case=LetterCase.CAMEL)
@@ -41,6 +43,7 @@ from typing import List
 class HomeResponseWithPage:
     homeList: List[Home]
     page : Page
+    
 
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass

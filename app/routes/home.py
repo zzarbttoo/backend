@@ -53,7 +53,7 @@ async def read_item(response:Response, home_seq: int):
 @router.get("/home/page", response_model=HomeResponseWithPage, description="""주택 페이지 목록""")
 async def read_item_as_page(response:Response, page:Page):
     # 가상의 데이터라고 가정합니다.
-    page = Page(total=10, current=1)
+    page = Page(total_page=3, current=1, total_count=23, chunk=10)
     homes_data = [
         [1, "도두일동 2619-1(도두 네오하임)", "네오종합건설㈜", "㈜네오투자개발", True ,True, "84.01", 340, 64, 24, datetime.strptime("2016.10.24", "%Y.%m.%d"),  datetime.strptime("2016.10.24", "%Y.%m.%d"), datetime.strptime("2016.11.07", "%Y.%m.%d"), True, "민간", "https://mk.kakaocdn.net/dna/karlo/image/2024-02-28/15/5a7cef75-763b-470f-b777-ae266853a458.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1709103142&signature=%2FVen9pBIBmtvTZMw2vNj637B8uQ%3D", None ,False], 
         [2, "도두일동 2619-1(도두 네오하임)", "네오종합건설㈜", "㈜네오투자개발", True ,True, "84.01", 340, 64, 24, datetime.strptime("2016.10.24", "%Y.%m.%d"),  datetime.strptime("2016.10.24", "%Y.%m.%d"), datetime.strptime("2016.11.07", "%Y.%m.%d"), True, "민간", "https://mk.kakaocdn.net/dna/karlo/image/2024-02-28/15/5a7cef75-763b-470f-b777-ae266853a458.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1709103142&signature=%2FVen9pBIBmtvTZMw2vNj637B8uQ%3D", None ,False], 
@@ -63,3 +63,4 @@ async def read_item_as_page(response:Response, page:Page):
     response.status_code = status.HTTP_200_OK
     home = Home( homeList=[Home(*data) for data in homes_data])
     return HomeResponseWithPage(home=home, page=page)
+    
