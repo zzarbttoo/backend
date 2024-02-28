@@ -5,49 +5,68 @@ router = APIRouter(prefix="/api")
 
 from datetime import datetime
 from app.models.HttpDtos import Home, Page, HomeResponseWithPage, WholeHomeResponseList, HomeResponse, SortRequest
+from app.service.karlo.karlo_create import get_img_str
 
+p1, p2, p3, p4, p5, p6, p7 = None, None, None, None, None, None, None
 
 
 @router.get("/home/", response_model=WholeHomeResponseList, description="""주택 전체 목록 """)
 async def read_items(response:Response):
 
 
+    global p1, p2, p3, p4, p5, p6, p7
+
+    if (p1 is None):
+        p1 = get_img_str()
+    if (p2 is None):
+        p2 = get_img_str()
+    if (p3 is None):
+        p3 = get_img_str()
+    if (p4 is None):
+        p4 = get_img_str()
+    if (p5 is None):
+        p5 = get_img_str()
+    if (p6 is None):
+        p6 = get_img_str()
+    if (p7 is None):
+        p7 = get_img_str()
 
 
     homes_data = [
     [1, "도두일동 2619-1(도두 네오하임)", "340", "40", 30, "84.01", 
-     base_64_url, 
-     base_64_url,
+     p1, 
+    None,
      True,
      datetime.strptime("2023.10.24", "%Y.%m.%d"), datetime.strptime("2024.10.24", "%Y.%m.%d"), 363],
     [2, "하귀2리 1437(하귀 코아루오션뷰)", "391", "80", 50, "78.9661", 
-     base_64_url, 
-     base_64_url,
+     p2, 
+    None,
      True,
      datetime.strptime("2023.08.24", "%Y.%m.%d"), datetime.strptime("2023.09.24", "%Y.%m.%d"), 362],
     [3, "도두일동 2619-2(도두 네오하임 주상복합 아파트 2차", "375", "100", 2, "84.34", 
- base_64_url, 
-     base_64_url,
+    p3, 
+    None,
      True,
      datetime.strptime("2023.07.24", "%Y.%m.%d"), datetime.strptime("2024.08.22", "%Y.%m.%d"), 361],
     [4, "도두일동 2619-1(도두 네오하임)", "370", "40", 30, "84.01", 
-    base_64_url, 
-    base_64_url, 
+    p4, 
+    None,
      False,
      datetime.strptime("2024.06.24", "%Y.%m.%d"), datetime.strptime("2024.2.20", "%Y.%m.%d"), 2],
     [5, "하귀1리 1040(제주 애월 하귀 정암 에코빌)", "420", "40", 30, "84.01", 
      False,
-    base_64_url, 
-    base_64_url, 
+    p5, 
+    None,
      datetime.strptime("2024.05.24", "%Y.%m.%d"), datetime.strptime("2024.1.24", "%Y.%m.%d"), 0],
     [6, "오라이동 1390-1(제주 휴림 힐 타운)", "458", "40", 30, "84.01", 
-    base_64_url, 
-    base_64_url, 
+    p6, 
+    None,
      False,
      datetime.strptime("2024.05.24", "%Y.%m.%d"), datetime.strptime("2023.12.24", "%Y.%m.%d"), 0],
     [7, "삼도이동 602-1(제주 아이린아파트 5차)", "290", "40", 30, "84.01", 
-    base_64_url, 
-    base_64_url, 
+    p7, 
+    None,
+    # base_64_url13, 
      False,
      datetime.strptime("2024.05.24", "%Y.%m.%d"), datetime.strptime("2021.10.24", "%Y.%m.%d"), 0]]
 

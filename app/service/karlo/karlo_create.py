@@ -1,4 +1,4 @@
-from karlo import Karlo
+from .karlo import Karlo
 
 
 def get_img_str():
