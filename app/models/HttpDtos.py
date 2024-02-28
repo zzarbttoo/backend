@@ -28,8 +28,9 @@ class Home:
     scheduled_move_in_date: str #입주 예정일 
     is_completion_status: bool #준공? -> true : 준공 false: 미준공
     land_type: str #택지 종류
-    # before_image_url:str #before 이미지 사진, db저장 
-    # after_image_url:str #after 이미지 사진, db저장(null 로 오면 없는 것..)
+    before_image_url:str #before 이미지 사진, db저장
+    after_image_url:str #after 이미지 사진, db저장(null 로 오면 없는 것..)
+    is_funding_done:bool
 
 
 #Response
