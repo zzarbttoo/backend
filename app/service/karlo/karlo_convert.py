@@ -9,15 +9,23 @@ from PIL import Image
 # REST_API_KEY = '${REST_API_KEY}'
 import base64
 
+proxy_url = "http://krmp-proxy.9rum.cc:3128"
+
+
+
 
 # 이미지 변환하기
 def inpainting(image, mask):
 
-    print(type(image))
-    print(type(mask))
+    proxies = {
+        "http": proxy_url,
+        "https": proxy_url,
+    }
+    target_url='https://api.kakaobrain.com/v2/inference/karlo/inpainting'
 
     r = requests.post(
-        'https://api.kakaobrain.com/v2/inference/karlo/inpainting',
+        target_url
+        ,
         json = {
             'image': base64.encodebytes(image).decode('ascii'),
             'mask' : mask,
@@ -29,7 +37,9 @@ def inpainting(image, mask):
         headers = {
             'Authorization': f'KakaoAK 09aca835cbc4ba2e3164cf76632a1b18',
             'Content-Type': 'application/json'
-        }
+        },
+        proxies=proxies
+        
     )
 
 
