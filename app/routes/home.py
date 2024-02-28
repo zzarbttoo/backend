@@ -1,7 +1,7 @@
 # controllers/items.py
 from fastapi import APIRouter, Response, status
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 
 from datetime import datetime
 from app.models.HttpDtos import Home, Page, HomeResponseWithPage, WholeHomeResponseList

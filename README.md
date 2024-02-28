@@ -4,7 +4,7 @@
    - 프로젝트 최상단에서 하위 명령어로 실행 
    - port와 env 파일은 명령어로 지정해주시면 됩니다 (하위는 port : ramdome , env : local 실행 )
 ```
-python3 -m uvicorn app.main:app --reload --port 5672 --env-file app/config/local.env
+python3 -m uvicorn app.main:app --reload --port 8080 --env-file app/config/local.env
 ```
 
 <br/>
