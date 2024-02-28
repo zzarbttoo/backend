@@ -2,6 +2,16 @@ from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from dataclasses_json import LetterCase
 
+from datetime import datetime
+
+#SortRequest
+@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass
+class SortRequest:
+    sort_standard:str #END_DATE 
+    show_standard:str #ALL, FIN, PROGRESS
+
+
 #Page
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
@@ -17,22 +27,16 @@ class Page:
 class Home:
     home_seq:int
     address: str #주소 
-    construction_company:str #시공사
-    executing_agency:str #시행사
-    type_sale: bool #분양? -> true: 분양, false : 임대
-    is_private:bool #민간? -> true: 민간, false : 공공 
-    scale: str #규모별
-    sale_price: int #분양가(백만원)
-    number_of_sale_units: int #총분양가구수
-    number_of_unsold_units: int #미분양가구수(당월)
-    subscription_date_for_sale: str #분양 청약일
-    contract_closing_date: str #계약 마감일 
-    scheduled_move_in_date: str #입주 예정일 
-    is_completion_status: bool #준공? -> true : 준공 false: 미준공
-    land_type: str #택지 종류
+    sale_price: int #분양가(백만원), 펀딩가
+    funding_current_price:int #펀딩가(백만원)
+    num_of_people:int #참여 인원
+    width:str #면적
     before_image_url:str #before 이미지 사진, db저장
-    after_image_url:str #after 이미지 사진, db저장(null 로 오면 없는 것..)
-    is_funding_done:bool #funding 됐는지 여부 
+    after_image_url:str #after 이미지 사진, db저장(null 로 오면 생성 가능)
+    is_funding_done:bool #funding 완료 여부
+    funding_done_date:datetime #funding 완료 일자 
+    funding_open_date:datetime #funding 시작 일자 
+    funding_last_date:str #funding D-Day
 
 
 #Response
