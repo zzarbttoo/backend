@@ -30,7 +30,7 @@ class Home:
     land_type: str #택지 종류
     before_image_url:str #before 이미지 사진, db저장
     after_image_url:str #after 이미지 사진, db저장(null 로 오면 없는 것..)
-    is_funding_done:bool
+    is_funding_done:bool #funding 됐는지 여부 
 
 
 #Response
