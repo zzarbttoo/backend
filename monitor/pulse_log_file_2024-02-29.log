@@ -792,3 +792,5 @@
 2024-02-29 02:50:42,117 - app.util.logger - INFO - run env ::: local
 2024-02-29 02:50:46,519 - app.util.logger - INFO - lifespan start
 2024-02-29 02:50:46,519 - app.util.logger - INFO - run env ::: local
+2024-02-29 03:15:08,515 - app.util.logger - INFO - lifespan start
+2024-02-29 03:15:08,516 - app.util.logger - INFO - run env ::: local

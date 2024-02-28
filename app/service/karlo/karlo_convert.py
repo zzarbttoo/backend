@@ -54,7 +54,6 @@ def convert_result(base64_str:str):
     image_data = base64.b64decode(base64_str)
     img = Image.open(BytesIO(image_data))
 
-
     width, height = img.size
     black_image = Image.new("RGBA", (width, height), (0, 0, 0))
 
