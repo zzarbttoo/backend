@@ -47,6 +47,11 @@ class HomeResponseWithPage:
 class WholeHomeResponseList:
     homeList: List[Home]
 
+@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass
+class HomeResponse:
+    home:Home
+
 
 #Request
 @dataclass_json(letter_case=LetterCase.CAMEL)

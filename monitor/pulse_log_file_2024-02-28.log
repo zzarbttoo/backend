@@ -368,3 +368,41 @@
 2024-02-28 17:20:59,513 - app.util.logger - INFO - run env ::: local
 2024-02-28 17:21:03,603 - app.util.logger - INFO - lifespan start
 2024-02-28 17:21:03,604 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:03,743 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:03,743 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:14,534 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:14,534 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:18,327 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:18,328 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:19,381 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:19,381 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:24,429 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:24,429 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:27,008 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:27,008 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:39,891 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:39,891 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:44,803 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:44,803 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:47,892 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:47,892 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:49,870 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:49,870 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:23:54,471 - app.util.logger - INFO - lifespan start
+2024-02-28 17:23:54,472 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:02,211 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:02,211 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:05,161 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:05,162 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:09,245 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:09,245 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:26,779 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:26,779 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:27,722 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:27,722 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:36,059 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:36,059 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:49,210 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:49,211 - app.util.logger - INFO - run env ::: local
+2024-02-28 17:24:51,682 - app.util.logger - INFO - lifespan start
+2024-02-28 17:24:51,682 - app.util.logger - INFO - run env ::: local
