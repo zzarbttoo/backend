@@ -50,16 +50,18 @@ async def read_items(response:Response, sort_request:SortRequest):
     response.status_code = status.HTTP_200_OK 
     homeList=[Home(*data) for data in homes_data] 
 
-    if (sort_request.show_standard == "PROGRESS"):
-        filtered_home_list = list(filter(lambda home: home.is_funding_done == True, homeList))
-        print(filtered_home_list)
-    elif(sort_request.show_standard == "FIN"):
-        filtered_home_list = list(filter(lambda home: home.is_funding_done == False, homeList))
-        print(filtered_home_list)
-    else:
-        filtered_home_list = homeList
+    return homeList
 
-    return WholeHomeResponseList(filtered_home_list)
+    # if (sort_request.show_standard == "PROGRESS"):
+    #     filtered_home_list = list(filter(lambda home: home.is_funding_done == True, homeList))
+    #     print(filtered_home_list)
+    # elif(sort_request.show_standard == "FIN"):
+    #     filtered_home_list = list(filter(lambda home: home.is_funding_done == False, homeList))
+    #     print(filtered_home_list)
+    # else:
+    #     filtered_home_list = homeList
+
+    # return WholeHomeResponseList(filtered_home_list)
 
 @router.get("/home/{home_seq}", response_model=HomeResponse, description="""주택 세부 조회 """)
 async def read_item(response:Response, home_seq: int):
