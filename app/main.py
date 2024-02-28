@@ -16,7 +16,7 @@ async def lifespan(app:fastapi.FastAPI):
 
 app = fastapi.FastAPI(lifespan=lifespan)
 
-from app.routes import items
+from app.routes import home
 
-app.include_router(items.router)
+app.include_router(home.router)
 

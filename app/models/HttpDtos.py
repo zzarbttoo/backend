@@ -5,6 +5,7 @@ from dataclasses_json import LetterCase
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class Home:
+    home_seq:int
     address: str #주소 
     construction_company:str #시공사
     executing_agency:str #시행사
