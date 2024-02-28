@@ -7,8 +7,8 @@ from datetime import datetime
 from app.models.HttpDtos import Home, Page, HomeResponseWithPage, WholeHomeResponseList, HomeResponse, SortRequest
 
 @router.get("/home/", response_model=WholeHomeResponseList, description="""주택 전체 목록 """)
-async def read_items(response:Response, sort_request:SortRequest):
-    
+async def read_items(response:Response):
+
     homes_data = [
     [1, "도두일동 2619-1(도두 네오하임)", "340", "40", 30, "84.01", 
      "https://mk.kakaocdn.net/dna/karlo/image/2024-02-28/15/5a7cef75-763b-470f-b777-ae266853a458.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1709103142&signature=%2FVen9pBIBmtvTZMw2vNj637B8uQ%3D", 
@@ -50,7 +50,7 @@ async def read_items(response:Response, sort_request:SortRequest):
     response.status_code = status.HTTP_200_OK 
     homeList=[Home(*data) for data in homes_data] 
 
-    return homeList
+    return WholeHomeResponseList(homeList)
 
     # if (sort_request.show_standard == "PROGRESS"):
     #     filtered_home_list = list(filter(lambda home: home.is_funding_done == True, homeList))
